@@ -1,24 +1,34 @@
 #include <stdio.h>
 
-int main(){
+int main() {
     int Number;
-    printf("Enter the no. of which Factorial you want:- ");
-    scanf("%d",&Number);
-    int factorial=1;
-    if (Number<0)
-    {
-        printf("Number Entered by you should be bigger then 0 \n" );
-        return 0;
+    int factorial = 1; // Initialize the factorial result to 1
+
+    // Prompt the user to enter a number
+    printf("Enter the number for which factorial you want: ");
+    scanf("%d", &Number);
+
+    // Check if the number is negative
+    if (Number < 0) {
+        // Factorials are not defined for negative numbers
+        printf("Please enter a number greater than or equal to 0.\n");
+        return 0; // Exit the program
     }
-    else if (Number==0 || Number == 1)
-    {
-    printf("The Factorial is 1");
-    return 0;
+    // Check if the number is 0 or 1
+    else if (Number == 0 || Number == 1) {
+        // The factorial of 0 or 1 is 1
+        printf("The factorial is 1\n");
+        return 0; // Exit the program
     }
-    for (int i = 0; i < Number; i++)
-    {
-        factorial *= (i+1);
+
+    // Calculate the factorial using a loop
+    for (int i = 0; i < Number; i++) {
+        // Multiply the current value of factorial by (i+1)
+        factorial *= (i + 1);
     }
-    printf("The Factorial of %d is %d",Number,factorial);
-    return 0;
+
+    // Display the result
+    printf("The factorial of %d is %d\n", Number, factorial);
+
+    return 0; // End of the program
 }
